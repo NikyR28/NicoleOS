@@ -17,11 +17,12 @@
     align-items: center;
     justify-content: center;
     margin-top: 50px; 
+    width: 100%;
     padding: 0;
 }
 
 .logo-img {
-    width: 200px; 
+    width: 90%; 
     height: 150px;
     object-fit: cover;
     margin: 0; 
@@ -30,7 +31,7 @@
 }
 
 .logo-written {
-    width: 200px;
+    width:90%;
     height: 60px;
     object-fit: cover;
     margin: 0; 
