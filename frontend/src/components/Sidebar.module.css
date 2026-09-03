@@ -21,7 +21,7 @@
 }
 
 .logo-img {
-    width: 300px; 
+    width: 200px; 
     height: 150px;
     object-fit: cover;
     margin: 0; 
@@ -30,7 +30,7 @@
 }
 
 .logo-written {
-    width: 350px;
+    width: 200px;
     height: 60px;
     object-fit: cover;
     margin: 0; 
