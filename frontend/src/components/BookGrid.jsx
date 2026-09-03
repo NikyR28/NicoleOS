@@ -1,13 +1,15 @@
 import styles from './BookGrid.module.css'
+import BookCard from './BookCard'
 
-function BookGrid({ books }) {
-    if(books.length==0||!books) return( <div className={styles['no-books']}>Nessun Libro Trovato</div>);
-    else{
+function BookGrid({ books, activeTab }) {
+    if (!books) return (<div className={styles['no-books']}>Nessun Libro Trovato</div>);
+    else {
         return (
-                <div>
-                    {books.map((book) => {
+            <div>
+                <div className={styles['which-books']}>Libri:`${activeTab}`</div>
+                {books.map((book) => {
                     return (
-                        <CardBook
+                        <BookCard
                             key={book.id}
                             title={book.title}
                             author={book.author}
@@ -16,7 +18,7 @@ function BookGrid({ books }) {
                             coverUrl={book.cover_url}
                             status={book.status}
                             startDate={book.start_date}
-                            startEnd={book.start_end}
+                            endDate={book.end_date}
                             rating={book.rating}
                             reviewText={book.review_text}
                             format={book.format}
@@ -24,7 +26,7 @@ function BookGrid({ books }) {
                             isLibrary={book.is_library}
                             returnDate={book.is_library ? book.return_date : null}
                         >
-                        </CardBook>
+                        </BookCard>
                     );
                 })}
             </div>
