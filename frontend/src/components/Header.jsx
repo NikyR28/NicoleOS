@@ -1,15 +1,15 @@
 import styles from './Header.module.css'
 import AddBook from '../assets/AddBook.png'
-function Header(){
+function Header({setSearchTerm, addBookButton}){
     const handleInputChange = (e) =>{
-
+        setSearchTerm(e.target.value);
     };
     return(
         <header className={styles.header}>
             <div className={styles.searchbar}>
                 <label htmlFor="search"><img src="https://www.freeiconspng.com/uploads/search-icon-png-9.png" alt="🔎" className={styles['search-img']}/></label>
                 <input type="search" name='search' onChange={handleInputChange} placeholder='Cerca nella mia libreria'/>
-                <button className={styles['button-add']}><img src={AddBook} alt="AGGIUNGI" /></button>
+                <button className={styles['button-add']} onClick={addBookButton}><img src={AddBook} alt="AGGIUNGI" /></button>
             </div>
         </header>
     );

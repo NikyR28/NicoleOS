@@ -1,18 +1,85 @@
 .App {
-    display: flex;
-    min-height: 100vh;
-    width: 100vw;
-    overflow-x: hidden;
+  display: flex;
+  min-height: 100vh;
+  width: 100vw;
+  overflow-x: hidden;
 }
 
 .content-area {
-    flex: 1;
-    width: calc(100% - 20vw); 
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-image: url('../src/assets/bg-nicole-os-main.png');
-    background-repeat: no-repeat;
-    background-size: cover;
+  flex: 1;
+  padding-left: 100px;
+  width: calc(100% - 20vw);
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-image: url('../src/assets/bg-nicole-os-main.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: 0;
+}
+
+.App {
+  display: flex;
+  min-height: 100vh;
+  width: 100vw;
+  overflow-x: hidden;
+}
+
+.content-area {
+  flex: 1;
+  padding-left: 100px;
+  width: calc(100% - 20vw);
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-image: url('../src/assets/bg-nicole-os-main.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: 0;
+}
+
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+
+.modal-content {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 95vw;
+  max-height: 95vh;
+}
+
+.buttonCloseCard {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+.buttonCloseCard img:hover {
+  box-shadow: 0px 1px 1px 1px red;
+}
+
+.buttonCloseCard img {
+  width: 30px;
+  height: auto;
+  position: static;
 }

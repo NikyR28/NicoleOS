@@ -4,6 +4,7 @@ import AllBook from '../assets/AllBook.png'
 import ReadBook from '../assets/ReadBook.png'
 import NotReadBook from '../assets/NotReadBook.png'
 import WishListBook from '../assets/WishListBook.png'
+import LibraryBook from '../assets/LibraryBook.png'
 import LogoWrittenNicoleOS from '../assets/LogoWriteNicoleOS.png'
 function Sidebar({ activeTab, setActiveTab }) {
     return (
@@ -40,6 +41,13 @@ function Sidebar({ activeTab, setActiveTab }) {
                 >
                     <img src={WishListBook} alt="✨" />
                     <span>Lista Desideri</span>
+                </button>
+                 <button
+                    className={`${styles['button-navbar']} ${activeTab === 'LIBRARY' ? styles.active : ''}`}
+                    onClick={() => setActiveTab('LIBRARY')}
+                >
+                    <img src={LibraryBook} alt="✨" />
+                    <span>Libri Biblioteca</span>
                 </button>
             </nav>
         </aside>

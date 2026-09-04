@@ -1,32 +1,28 @@
 import styles from './BookGrid.module.css'
-import BookCard from './BookCard'
-
-function BookGrid({ books, activeTab }) {
-    if (!books) return (<div className={styles['no-books']}>Nessun Libro Trovato</div>);
+import BookPreview from './BookPreview'
+import volpe from '../assets/img-volpe-no-book.png'
+function BookGrid({ books, activeTab, onBookClick, }) {
+    if (!books || books.length <= 0) { 
+        return (
+            <div className={`${styles['no-books']}`}>
+                <span>Nessun Libro Trovato</span>
+                <img src={volpe} alt="🦊❤️" />
+            </div>); 
+        }
     else {
         return (
-            <div>
-                <div className={styles['which-books']}>Libri:`${activeTab}`</div>
+            <div className={styles.bookGrid}>
                 {books.map((book) => {
                     return (
-                        <BookCard
+                        <BookPreview
                             key={book.id}
                             title={book.title}
                             author={book.author}
-                            pages={book.pages}
-                            genre={book.genre}
                             coverUrl={book.cover_url}
-                            status={book.status}
-                            startDate={book.start_date}
-                            endDate={book.end_date}
-                            rating={book.rating}
-                            reviewText={book.review_text}
-                            format={book.format}
-                            binding={book.binding}
-                            isLibrary={book.is_library}
-                            returnDate={book.is_library ? book.return_date : null}
+                            onBookClick={onBookClick}
+                            book={book}
                         >
-                        </BookCard>
+                        </BookPreview>
                     );
                 })}
             </div>

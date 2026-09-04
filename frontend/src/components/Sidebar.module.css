@@ -45,7 +45,7 @@
     gap: 10px;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items:flex-start;
     justify-content: space-around;
     background-color: var(--shelf-wood);
     padding-bottom: 10px 0 0 40px;
@@ -67,9 +67,17 @@
     justify-content: space-around;
     align-items: center;
     border: none;
+    width: 100%;
     gap: 5px;
+}
+.button-navbar:first-child{
+    border-radius: inherit;
 }
 .button-navbar img{
     width: 60px;
     height: auto;
+}
+
+.active{
+    background-color: rgb(194, 169, 149);
 }
