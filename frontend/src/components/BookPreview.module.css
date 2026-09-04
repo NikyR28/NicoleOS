@@ -1,17 +1,66 @@
-.bookPreview{
-    width:70px;
+.bookPreview {
+    width: 70px;
     height: fit-content;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 0;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
-.coverImage{
+
+.bookPreview:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.coverImage {
     width: 100%;
     height: 200px;
     object-fit: cover;
     margin-bottom: 0;
     display: block;
     background-color: var(--shelf-wood);
+    border-radius: 4px;
+}
+
+@media screen and (max-width: 1024px) {
+    .bookPreview {
+        width: 75px;
+    }
+
+    .coverImage {
+        height: 210px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .bookPreview {
+        width: 80px;
+    }
+
+    .coverImage {
+        height: 220px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .bookPreview {
+        width: 65px;
+    }
+
+    .coverImage {
+        height: 180px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .bookPreview {
+        width: 60px;
+    }
+
+    .coverImage {
+        height: 160px;
+    }
 }
