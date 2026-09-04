@@ -18,7 +18,7 @@ function App() {
   const [modifyForm, setModifyForm] = useState(false);
   const [formBook, setFormBook] = useState(false);
   const [searchTerm, setSearchTerm] = useState('');
-  const [books, setBooks] = useState(booksMock); 
+  const [books, setBooks] = useState(booksMock);
   // const [books, setBooks] = useState([]);    
 
   /*
@@ -76,7 +76,7 @@ function App() {
     }
     */
 
-    setSelectedBook(null); 
+    setSelectedBook(null);
   };
 
   const tabFiltered = books.filter((book) => {
@@ -84,7 +84,7 @@ function App() {
       case 'READ': return book.status === 'READ';
       case 'OWNED': return book.status === 'OWNED';
       case 'WISHLIST': return book.status === 'WISHLIST';
-      case 'LIBRARY': return book.is_library==true;
+      case 'LIBRARY': return book.is_library == true;
       default: return true;
     }
   });
@@ -102,10 +102,26 @@ function App() {
   const addBookButton = () => setFormBook((prev) => !prev);
   const modify = () => setModifyForm(true);
 
+  useEffect(() => {
+    if (selectedBook || modifyForm || formBook) {
+      document.body.style.overflow = 'hidden';
+      document.body.style.position = 'fixed';
+      document.body.style.width = '100%';
+    } else {
+      document.body.style.overflow = 'unset';
+      document.body.style.position = 'static';
+    }
+
+    return () => {
+      document.body.style.overflow = 'unset';
+      document.body.style.position = 'static';
+    };
+  }, [selectedBook, modifyForm, formBook]);
+  
   return (
     <div className="App">
       <Sidebar activeTab={activeTab} setActiveTab={setActiveTab} />
-      
+
       <main className="content-area">
         <Header setSearchTerm={setSearchTerm} addBookButton={addBookButton} />
         <BookGrid books={filteredBooks} activeTab={activeTab} onBookClick={onBookClick} />
